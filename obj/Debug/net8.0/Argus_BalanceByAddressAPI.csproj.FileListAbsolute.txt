@@ -1,0 +1,6 @@
+/home/caitml/Projects/Cardano/Argus_BalanceByAddressAPI/obj/Debug/net8.0/Argus_BalanceByAddressAPI.csproj.AssemblyReference.cache
+/home/caitml/Projects/Cardano/Argus_BalanceByAddressAPI/obj/Debug/net8.0/Argus_BalanceByAddressAPI.GeneratedMSBuildEditorConfig.editorconfig
+/home/caitml/Projects/Cardano/Argus_BalanceByAddressAPI/obj/Debug/net8.0/Argus_BalanceByAddressAPI.AssemblyInfoInputs.cache
+/home/caitml/Projects/Cardano/Argus_BalanceByAddressAPI/obj/Debug/net8.0/Argus_BalanceByAddressAPI.AssemblyInfo.cs
+/home/caitml/Projects/Cardano/Argus_BalanceByAddressAPI/obj/Debug/net8.0/Argus_BalanceByAddressAPI.csproj.CoreCompileInputs.cache
+/home/caitml/Projects/Cardano/Argus_BalanceByAddressAPI/obj/Debug/net8.0/Argus_BalanceByAddressAPI.MvcApplicationPartsAssemblyInfo.cache
