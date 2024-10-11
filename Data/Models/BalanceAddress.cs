@@ -4,9 +4,10 @@ using Cardano.Sync.Data.Models.Datums;
 namespace Argus_BalanceByAddressAPI.Data.Models;
 
 //double check the inheritance and types
-public record BalanceAddress : IReducerModel
+public record BalanceAddress() : IReducerModel
 {
-    //because Address is a type in Argus somewhere - verify this info and then maybe can use Address userAddress
+    //Address is a type in Argus somewhere - verify this info and then maybe can use Address userAddress
     public string Address { get; set; } = default!;
-    public Lovelace Balance { get; set; } = default!;
+    public Lovelace Balance { get; set; } = default!; //may have other assets like tokens
+    public ulong Slot { get; set; } //for the rollback function - double check later
 }

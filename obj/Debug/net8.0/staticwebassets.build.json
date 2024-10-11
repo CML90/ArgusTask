@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8VBZEN1i92S+TeeL3Y0Hx9RxFQ3DlsvkzFJsizUq55s=",
+  "Source": "Argus_BalanceByAddressAPI",
+  "BasePath": "_content/Argus_BalanceByAddressAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

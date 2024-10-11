@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Argus_BalanceByAddressAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbe057eacfb0be0f5eeea93a05b33f7623a604aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("Argus_BalanceByAddressAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Argus_BalanceByAddressAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
