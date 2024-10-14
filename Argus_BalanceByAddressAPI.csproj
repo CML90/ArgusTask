@@ -14,6 +14,7 @@
     </PackageReference>
     <PackageReference Include="Pallas.NET" Version="0.1.40" />
     <PackageReference Include="SAIB.Cardano.Sync" Version="0.3.0-alpha" />
+    <PackageReference Include="NSec.Cryptography" Version="24.4.0" />
   </ItemGroup>
 
 </Project>

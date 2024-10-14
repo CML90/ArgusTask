@@ -26,12 +26,40 @@ namespace Argus_BalanceByAddressAPI.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("text");
 
-                    b.Property<decimal>("Slot")
-                        .HasColumnType("numeric(20,0)");
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("numeric(20,0)")
+                        .HasColumnName("Balance");
 
                     b.HasKey("Address");
 
                     b.ToTable("BalanceAddress");
+                });
+
+            modelBuilder.Entity("Argus_BalanceByAddressAPI.Data.Models.Transactions", b =>
+                {
+                    b.Property<string>("TxHash")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("TxIndex")
+                        .HasColumnType("numeric(20,0)");
+
+                    b.Property<bool>("isOutput")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("numeric(20,0)")
+                        .HasColumnName("Amount");
+
+                    b.Property<decimal>("Slot")
+                        .HasColumnType("numeric(20,0)");
+
+                    b.HasKey("TxHash", "TxIndex", "isOutput");
+
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("Cardano.Sync.Data.Models.ReducerState", b =>
@@ -49,28 +77,6 @@ namespace Argus_BalanceByAddressAPI.Migrations
                     b.HasKey("Name");
 
                     b.ToTable("ReducerStates");
-                });
-
-            modelBuilder.Entity("Argus_BalanceByAddressAPI.Data.Models.BalanceAddress", b =>
-                {
-                    b.OwnsOne("Cardano.Sync.Data.Models.Datums.Lovelace", "Balance", b1 =>
-                        {
-                            b1.Property<string>("BalanceAddressAddress")
-                                .HasColumnType("text");
-
-                            b1.Property<decimal>("Value")
-                                .HasColumnType("numeric(20,0)");
-
-                            b1.HasKey("BalanceAddressAddress");
-
-                            b1.ToTable("BalanceAddress");
-
-                            b1.WithOwner()
-                                .HasForeignKey("BalanceAddressAddress");
-                        });
-
-                    b.Navigation("Balance")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

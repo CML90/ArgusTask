@@ -2,9 +2,11 @@ using Cardano.Sync;
 using Cardano.Sync.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Cardano.Sync.Reducers;
-using Argus_BalanceByAddressAPI.Data;
 using Cardano.Sync.Data.Models;
+using Argus_BalanceByAddressAPI.Data;
 using Argus_BalanceByAddressAPI.Reducer;
+using Argus_BalanceByAddressAPI.Data.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +22,21 @@ using IServiceScope scope = app.Services.CreateScope();
 BalanceAddressDbContext dbContext = scope.ServiceProvider.GetRequiredService<BalanceAddressDbContext>();
 dbContext.Database.Migrate(); //automigrates
 
-app.MapGet("/", () => "Hello World!");
+
+app.MapGet("/api/balance/{address}", async (string address, BalanceAddressDbContext dbContext) => 
+{
+    var balanceEntry = await dbContext.BalanceAddress
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(ba => ba.Address == address);
+
+    if (balanceEntry == null)
+                {
+                    return Results.NotFound(new { Message = "Address not found." });
+                }
+
+                return Results.Ok(balanceEntry);
+});
+
 
 app.Run();
 

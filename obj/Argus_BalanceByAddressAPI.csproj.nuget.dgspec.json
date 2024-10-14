@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
+            "NSec.Cryptography": {
+              "target": "Package",
+              "version": "[24.4.0, )"
+            },
             "Pallas.NET": {
               "target": "Package",
               "version": "[0.1.40, )"

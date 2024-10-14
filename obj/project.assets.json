@@ -49,6 +49,51 @@
           }
         }
       },
+      "libsodium/1.0.19": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libsodium.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libsodium.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-musl-arm/native/libsodium.so": {
+            "assetType": "native",
+            "rid": "linux-musl-arm"
+          },
+          "runtimes/linux-musl-arm64/native/libsodium.so": {
+            "assetType": "native",
+            "rid": "linux-musl-arm64"
+          },
+          "runtimes/linux-musl-x64/native/libsodium.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-x64/native/libsodium.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/libsodium.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libsodium.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/libsodium.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/libsodium.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.6": {
         "type": "package",
         "compile": {
@@ -1156,6 +1201,18 @@
           }
         }
       },
+      "NSec.Cryptography/24.4.0": {
+        "type": "package",
+        "dependencies": {
+          "libsodium": "[1.0.19, 1.0.20)"
+        },
+        "compile": {
+          "lib/net6.0/NSec.Cryptography.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/NSec.Cryptography.dll": {}
+        }
+      },
       "Orion.CardanoSharp.Blockfrost.Sdk/0.0.6": {
         "type": "package",
         "dependencies": {
@@ -1754,6 +1811,30 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "libsodium/1.0.19": {
+      "sha512": "tupm/HViwBN6Knd/gckR+cLaJGR39GLmiU4iDMM5hp/1BoczMr8fwJhSU+3/C2V4hi9nBK/4FICRKtTLU30TCA==",
+      "type": "package",
+      "path": "libsodium/1.0.19",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "AUTHORS",
+        "ChangeLog",
+        "LICENSE",
+        "libsodium.1.0.19.nupkg.sha512",
+        "libsodium.nuspec",
+        "runtimes/linux-arm/native/libsodium.so",
+        "runtimes/linux-arm64/native/libsodium.so",
+        "runtimes/linux-musl-arm/native/libsodium.so",
+        "runtimes/linux-musl-arm64/native/libsodium.so",
+        "runtimes/linux-musl-x64/native/libsodium.so",
+        "runtimes/linux-x64/native/libsodium.so",
+        "runtimes/osx-arm64/native/libsodium.dylib",
+        "runtimes/osx-x64/native/libsodium.dylib",
+        "runtimes/win-x64/native/libsodium.dll",
+        "runtimes/win-x86/native/libsodium.dll"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.6": {
@@ -3430,6 +3511,21 @@
         "postgresql.png"
       ]
     },
+    "NSec.Cryptography/24.4.0": {
+      "sha512": "R89OF0T5OY9QnPRoTsMCaPKMqtXcWKZSWAO4zyUaFHI+ZRMgXU7WaIwg/rPP3vOfdaLl8HdUHWkDB+2B9FOO7g==",
+      "type": "package",
+      "path": "nsec.cryptography/24.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NOTICE",
+        "lib/net6.0/NSec.Cryptography.dll",
+        "nsec.cryptography.24.4.0.nupkg.sha512",
+        "nsec.cryptography.nuspec",
+        "nsec.png"
+      ]
+    },
     "Orion.CardanoSharp.Blockfrost.Sdk/0.0.6": {
       "sha512": "mT1VOF/zgSLJZGNS9KMuXXyUP5drmk7IJe33R7Xuess1JVXBuVZI1xdiaBxqzDEPkrf5RpEMwhSTHAyc3nYIOw==",
       "type": "package",
@@ -4319,6 +4415,7 @@
     "net8.0": [
       "Chrysalis >= 0.2.2",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.10",
+      "NSec.Cryptography >= 24.4.0",
       "Pallas.NET >= 0.1.40",
       "SAIB.Cardano.Sync >= 0.3.0-alpha"
     ]
@@ -4374,6 +4471,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.10, )"
+          },
+          "NSec.Cryptography": {
+            "target": "Package",
+            "version": "[24.4.0, )"
           },
           "Pallas.NET": {
             "target": "Package",

@@ -8,6 +8,5 @@ public record BalanceAddress() : IReducerModel
 {
     //Address is a type in Argus somewhere - verify this info and then maybe can use Address userAddress
     public string Address { get; set; } = default!;
-    public Lovelace Balance { get; set; } = default!; //may have other assets like tokens
-    public ulong Slot { get; set; } //for the rollback function - double check later
+    public ulong Balance { get; set; } = default!; //may have other assets like tokens
 }

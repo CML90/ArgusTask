@@ -13,7 +13,7 @@ public class BalanceAddressDbContext
     //based on JPGStore.Data.Models.JPGStoreSyncDbContext.cs
     //make the table
     public DbSet<BalanceAddress> BalanceAddress { get; set; }
-
+    public DbSet<Transactions> Transactions { get; set; }
     //based on both JPGStore.Data.Models.JPGStoreSyncDbContext.cs and Argus.Sync.Example.Data.CardanoTestDbContext.cs
     override protected void OnModelCreating(ModelBuilder modelBuilder)
     
@@ -25,7 +25,14 @@ public class BalanceAddressDbContext
         //JPGStore also uses .OwnsOne and .HasIndex - note why later
         modelBuilder.Entity<BalanceAddress>(entity => {
             entity.HasKey(e => e.Address);
-            entity.OwnsOne(e => e.Balance); //becasue there was a sudden error saying LoveLace doesnt have a PK
+            entity.Property(e => e.Balance)
+                .HasColumnName("Balance"); //because there was a sudden error saying LoveLace doesnt have a PK
+        });
+
+        modelBuilder.Entity<Transactions>(entity => {
+            entity.HasKey(e => new { e.TxHash, e.TxIndex, e.isOutput });
+            entity.Property(e => e.Amount)
+                .HasColumnName("Amount"); //becasue there was a sudden error saying LoveLace doesnt have a PK
         });
 
         //In JPGStore code - learn why its necessary
